@@ -13,7 +13,7 @@ defmodule Identixir do
   def hash_username(username) do
     hex =
       :crypto.hash(:md5, username)
-      |> :binary.bin_to_list()
+      |> :binary.bin_to_list
 
     %Identixir.Image{hex: hex}
   end
@@ -27,8 +27,8 @@ defmodule Identixir do
       hex
       |> Enum.chunk_every(3, 3, :discard)
       |> Enum.map(&mirror_row/1)
-      |> List.flatten()
-      |> Enum.with_index()
+      |> List.flatten
+      |> Enum.with_index
 
     %Identixir.Image{image | grid: grid}
   end
@@ -65,9 +65,9 @@ defmodule Identixir do
     image = :egd.create(250, 250)
     fill = :egd.color(color)
 
-    Enum.each(pixel_map, fn {start, stop} ->
+    Enum.each pixel_map, fn {start, stop} ->
       :egd.filledRectangle(image, start, stop, fill)
-    end)
+    end
 
     :egd.render(image)
   end

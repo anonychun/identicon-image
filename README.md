@@ -1,21 +1,14 @@
 # Identixir
 
-**TODO: Add description**
-
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `identixir` to your list of dependencies in `mix.exs`:
+To generate the image you need to call the function `Identixir.generate("")` from your `Interactive Elixir` shell
 
 ```elixir
-def deps do
-  [
-    {:identixir, "~> 0.1.0"}
-  ]
-end
+iex()> Identixir.generate("username")
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/identixir](https://hexdocs.pm/identixir).
+## Results
 
+![anonychun_gen](assets/images/gen/anonychun.png)
+![dhonasiwi_gen](assets/images/gen/dhonasiwi.png)
