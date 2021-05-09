@@ -39,16 +39,16 @@ defmodule Identixir do
 
   def filter_odd_squares(%Identixir.Image{grid: grid} = image) do
     grid =
-      Enum.filter(grid, fn {code, _} ->
+      Enum.filter grid, fn {code, _} ->
         rem(code, 2) == 0
-      end)
+      end
 
     %Identixir.Image{image | grid: grid}
   end
 
   def build_pixel_map(%Identixir.Image{grid: grid} = image) do
     pixel_map =
-      Enum.map(grid, fn {_, index} ->
+      Enum.map grid, fn {_, index} ->
         horizontal = rem(index, 5) * 50
         vertical = div(index, 5) * 50
 
@@ -56,7 +56,7 @@ defmodule Identixir do
         bottom_right = {horizontal + 50, vertical + 50}
 
         {top_left, bottom_right}
-      end)
+      end
 
     %Identixir.Image{image | pixel_map: pixel_map}
   end
